@@ -1,0 +1,32 @@
+# ESP32 PIR Sensör Projesi (ESP-IDF)
+
+Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründen veri almayı** göstermektedir.  
+**ESP-IDF framework kullanılarak geliştirilmiştir**.
+
+## 🚀 Kullanılan Donanımlar:
+- **ESP32S NodeMCU V1.1**
+- **HC-SR501 PIR Sensörü**
+- **Bağlantı kabloları**
+
+## 🔧 Bağlantılar:
+| PIR Sensör Pinleri | ESP32 Pinleri |
+|--------------------|--------------|
+| VCC               | 3.3V          |
+| GND               | GND           |
+| OUT               | GPIO 15       |
+
+## 📜 Kod Açıklaması:
+- **ESP-IDF 5.x sürümüyle uyumludur.**
+- **GPIO işlemleri için `driver/gpio.h` kütüphanesi kullanılmıştır.**
+- **Kod `app_main()` fonksiyonu içinde çalışmaktadır.**
+- **PIR sensöründen gelen sinyal `gpio_get_level()` ile okunmaktadır.**
+- **ESP32'nin FreeRTOS tabanlı çalışma yapısına uygun olarak `vTaskDelay(pdMS_TO_TICKS(1000))` ile bekleme süresi ayarlanmıştır.**
+
+## ⚙️ ESP-IDF Kurulumu ve Kullanımı:
+1. **ESP-IDF'in yüklü olduğundan emin olun**  
+   - Eğer ESP-IDF yüklü değilse, [ESP-IDF Kurulum Rehberine](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/) göz atın.
+
+2. **PlatformIO kullanarak projeyi klonlayın ve açın:**
+   ```sh
+   git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
+   cd esp32-sensor-projects/esp-idf-framework/pir_sensor_project

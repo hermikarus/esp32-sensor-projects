@@ -1,0 +1,30 @@
+# ESP32 PIR Sensör Projesi
+
+Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründen veri almayı** göstermektedir.
+
+## 🚀 Kullanılan Donanımlar:
+- **ESP32S NodeMCU V1.1**
+- **HC-SR501 PIR Sensörü**
+- **Bağlantı kabloları**
+
+## 🔧 Bağlantılar:
+| PIR Sensör Pinleri | ESP32 Pinleri |
+|--------------------|--------------|
+| VCC               | 3.3V          |
+| GND               | GND           |
+| OUT               | GPIO 15       |
+
+## 📜 Kod Açıklaması:
+1. **ESP32'nin GPIO15 pini giriş olarak ayarlandı.**
+2. **PIR sensöründen gelen sinyal `digitalRead()` ile okundu.**
+3. **Hareket algılanırsa "Hareket Algılandı!" mesajı, algılanmazsa "Hareket Yok..." mesajı seri monitöre yazdırıldı.**
+4. **Her 1 saniyede bir okuma yapıldı.**
+
+## 📂 PlatformIO Kurulumu:
+1. PlatformIO'yu yükleyin: [PlatformIO](https://platformio.org/)
+2. Terminalde aşağıdaki komutları çalıştırın:
+   ```sh
+   git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
+   cd esp32-sensor-projects/arduino-framework/pir_sensor_project
+   pio run --target upload
+   pio device monitor
