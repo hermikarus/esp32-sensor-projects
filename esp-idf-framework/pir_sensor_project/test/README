@@ -1,28 +1,83 @@
-# ESP32 PIR Sensör Projesi (ESP-IDF)
+# ESP32 PIR Sensor Project (ESP-IDF)
+
+--------------------------------------------------------------------------------------------------------------------
+## Table of Contents | İçindekiler
+- [🌍 English Version](#english-version)
+- [🇹🇷 Türkçe Versiyon](#türkçe-versiyon)
+--------------------------------------------------------------------------------------------------------------------
+
+## 🌍 English Version
+
+This project demonstrates how to read data from an **HC-SR501 PIR motion sensor** using an **ESP32S NodeMCU V1.1**.  
+It is developed using the **ESP-IDF framework** and runs on FreeRTOS.  
+The project reads motion detection data from the sensor and prints the results to the serial monitor.
+
+## 🚀 Hardware Used
+
+- **ESP32S NodeMCU V1.1**
+- **HC-SR501 PIR Sensor**
+- **Jumper Wires**
+
+## 🔧 Wiring
+
+| PIR Sensor Pins | ESP32 Pins |
+|----------------|------------|
+| VCC           | 3.3V       |
+| GND           | GND        |
+| OUT           | GPIO 15    |
+
+## 📜 Code Explanation
+
+- **Compatible with ESP-IDF 5.x.**  
+- **Uses `driver/gpio.h` for GPIO operations.**  
+- **Runs inside the `app_main()` function.**  
+- **Reads motion detection data using `gpio_get_level()`.**  
+- **Implements FreeRTOS-based timing with `vTaskDelay(pdMS_TO_TICKS(1000))`.**
+
+## ⚙️ Setting Up ESP-IDF
+
+1. **Ensure ESP-IDF is installed**  
+   - If ESP-IDF is not installed, refer to the [ESP-IDF Setup Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).
+
+2. **Clone and open the project using PlatformIO:**
+   ```sh
+   git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
+   cd esp32-sensor-projects/esp-idf-framework/pir_sensor_project
+   pio run --target upload
+   pio device monitor
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 🇹🇷 Türkçe Versiyon
 
 Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründen veri almayı** göstermektedir.  
-**ESP-IDF framework kullanılarak geliştirilmiştir**.
+**ESP-IDF framework kullanılarak geliştirilmiş olup FreeRTOS üzerinde çalışmaktadır.**  
+PIR sensöründen hareket algılama verilerini okuyarak sonucu seri monitöre yazdırmaktadır.
 
-## 🚀 Kullanılan Donanımlar:
+## 🚀 Kullanılan Donanımlar
+
 - **ESP32S NodeMCU V1.1**
 - **HC-SR501 PIR Sensörü**
-- **Bağlantı kabloları**
+- **Bağlantı Kablosu**
 
-## 🔧 Bağlantılar:
+## 🔧 Bağlantılar
+
 | PIR Sensör Pinleri | ESP32 Pinleri |
 |--------------------|--------------|
-| VCC               | 3.3V          |
-| GND               | GND           |
-| OUT               | GPIO 15       |
+| VCC               | 3.3V         |
+| GND               | GND          |
+| OUT               | GPIO 15      |
 
-## 📜 Kod Açıklaması:
-- **ESP-IDF 5.x sürümüyle uyumludur.**
-- **GPIO işlemleri için `driver/gpio.h` kütüphanesi kullanılmıştır.**
-- **Kod `app_main()` fonksiyonu içinde çalışmaktadır.**
-- **PIR sensöründen gelen sinyal `gpio_get_level()` ile okunmaktadır.**
+## 📜 Kod Açıklaması
+
+- **ESP-IDF 5.x sürümüyle uyumludur.**  
+- **GPIO işlemleri için `driver/gpio.h` kütüphanesi kullanılmıştır.**  
+- **Kod `app_main()` fonksiyonu içinde çalışmaktadır.**  
+- **PIR sensöründen gelen sinyal `gpio_get_level()` ile okunmaktadır.**  
 - **ESP32'nin FreeRTOS tabanlı çalışma yapısına uygun olarak `vTaskDelay(pdMS_TO_TICKS(1000))` ile bekleme süresi ayarlanmıştır.**
 
-## ⚙️ ESP-IDF Kurulumu ve Kullanımı:
+## ⚙️ ESP-IDF Kurulumu ve Kullanımı
+
 1. **ESP-IDF'in yüklü olduğundan emin olun**  
    - Eğer ESP-IDF yüklü değilse, [ESP-IDF Kurulum Rehberine](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/) göz atın.
 
@@ -30,3 +85,7 @@ Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründe
    ```sh
    git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
    cd esp32-sensor-projects/esp-idf-framework/pir_sensor_project
+   pio run --target upload
+   pio device monitor
+   
+--------------------------------------------------------------------------------------------------------------------
