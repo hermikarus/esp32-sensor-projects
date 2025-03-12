@@ -1,30 +1,85 @@
-# ESP32 PIR Sensör Projesi
+# ESP32 PIR Sensor Project
 
-Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründen veri almayı** göstermektedir.
+--------------------------------------------------------------------------------------------------------------------
+## Table of Contents | İçindekiler
+- [🌍 English Version](#english-version)
+- [🇹🇷 Türkçe Versiyon](#türkçe-versiyon)
+-------------------------------------------------------------------------------------------------------------------
 
-## 🚀 Kullanılan Donanımlar:
+## 🌍 English Version
+
+This project demonstrates how to read data from an **HC-SR501 PIR motion sensor** using an **ESP32S NodeMCU V1.1**.  
+It provides a simple example of detecting motion and displaying the results via the serial monitor.  
+The project is developed using **Arduino and ESP-IDF frameworks** within the **PlatformIO development environment**.
+
+## 🚀 Hardware Used
+
 - **ESP32S NodeMCU V1.1**
-- **HC-SR501 PIR Sensörü**
-- **Bağlantı kabloları**
+- **HC-SR501 PIR Sensor**
+- **Jumper Wires**
 
-## 🔧 Bağlantılar:
-| PIR Sensör Pinleri | ESP32 Pinleri |
-|--------------------|--------------|
-| VCC               | 3.3V          |
-| GND               | GND           |
-| OUT               | GPIO 15       |
+## 🔧 Wiring
 
-## 📜 Kod Açıklaması:
-1. **ESP32'nin GPIO15 pini giriş olarak ayarlandı.**
-2. **PIR sensöründen gelen sinyal `digitalRead()` ile okundu.**
-3. **Hareket algılanırsa "Hareket Algılandı!" mesajı, algılanmazsa "Hareket Yok..." mesajı seri monitöre yazdırıldı.**
-4. **Her 1 saniyede bir okuma yapıldı.**
+| PIR Sensor Pins | ESP32 Pins |
+|----------------|------------|
+| VCC           | 3.3V       |
+| GND           | GND        |
+| OUT           | GPIO 15    |
 
-## 📂 PlatformIO Kurulumu:
-1. PlatformIO'yu yükleyin: [PlatformIO](https://platformio.org/)
-2. Terminalde aşağıdaki komutları çalıştırın:
+## 📜 Code Explanation
+
+1. **GPIO15 is set as an input for the PIR sensor.**  
+2. **The output of PIR sensor is read using `digitalRead()`.**  
+3. **If motion is detected, "Motion detected!" is printed on the serial monitor; otherwise, "No motion detected..." is displayed.**  
+4. **The sensor output is checked every second.**
+
+## 📂 Setting Up PlatformIO
+
+1. Install PlatformIO: [PlatformIO](https://platformio.org/)  
+2. Run the following commands in the terminal:  
    ```sh
    git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
    cd esp32-sensor-projects/arduino-framework/pir_sensor_project
    pio run --target upload
    pio device monitor
+
+-------------------------------------------------------------------------------------------------------------------
+
+## 🇹🇷 Türkçe Versiyon
+
+Bu proje, **ESP32S NodeMCU V1.1** kullanarak **HC-SR501 PIR hareket sensöründen veri almayı** göstermektedir.  
+Hareket algılama işlemini basit bir şekilde gerçekleştirir ve seri monitör üzerinden çıktı verir.  
+Proje, **Arduino ve ESP-IDF framework’leri** kullanılarak **PlatformIO geliştirme ortamında** geliştirilmiştir.
+
+## 🚀 Kullanılan Donanımlar
+
+- **ESP32S NodeMCU V1.1**
+- **HC-SR501 PIR Sensörü**
+- **Bağlantı Kablosu**
+
+## 🔧 Bağlantılar
+
+| PIR Sensör Pinleri | ESP32 Pinleri |
+|--------------------|--------------|
+| VCC               | 3.3V         |
+| GND               | GND          |
+| OUT               | GPIO 15      |
+
+## 📜 Kod Açıklaması
+
+1. **ESP32''nin GPIO15 pini giriş olarak ayarlandı.**  
+2. **PIR sensöründen gelen sinyal `digitalRead()` ile okundu.**  
+3. **Hareket algılanırsa "Hareket Algılandı!" mesajı, algılanmazsa "Hareket Yok..." mesajı seri monitöre yazdırıldı.**  
+4. **Her 1 saniyede bir okuma yapıldı.**
+
+## 📂 PlatformIO Kurulumu
+
+1. PlatformIO''yu yükleyin: [PlatformIO](https://platformio.org/)  
+2. Terminalde aşağıdaki komutları çalıştırın:  
+   ```sh
+   git clone https://github.com/kullaniciadi/esp32-sensor-projects.git
+   cd esp32-sensor-projects/arduino-framework/pir_sensor_project
+   pio run --target upload
+   pio device monitor
+   
+-------------------------------------------------------------------------------------------------------------------
